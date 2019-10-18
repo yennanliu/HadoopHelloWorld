@@ -1,6 +1,8 @@
-# Creates pseudo distributed hadoop 2.7.1
+# Creates pseudo distributed hadoop 2.7.0
 #
 # docker build -t sequenceiq/hadoop .
+
+# modify from https://hub.docker.com/r/sequenceiq/hadoop-docker/dockerfile
 
 FROM sequenceiq/pam:centos-6.5
 MAINTAINER SequenceIQ
@@ -28,15 +30,14 @@ RUN rm jdk-7u71-linux-x64.rpm
 
 ENV JAVA_HOME /usr/java/default
 ENV PATH $PATH:$JAVA_HOME/bin
-RUN rm /usr/bin/java && ln -s $JAVA_HOME/bin/java /usr/bin/java
 
 # download native support
 RUN mkdir -p /tmp/native
-RUN curl -L https://github.com/sequenceiq/docker-hadoop-build/releases/download/v2.7.1/hadoop-native-64-2.7.1.tgz | tar -xz -C /tmp/native
+RUN curl -Ls http://dl.bintray.com/sequenceiq/sequenceiq-bin/hadoop-native-64-2.7.0.tar | tar -x -C /tmp/native
 
 # hadoop
-RUN curl -s http://www.eu.apache.org/dist/hadoop/common/hadoop-2.7.1/hadoop-2.7.1.tar.gz | tar -xz -C /usr/local/
-RUN cd /usr/local && ln -s ./hadoop-2.7.1 hadoop
+RUN curl -s http://www.eu.apache.org/dist/hadoop/common/hadoop-2.7.0/hadoop-2.7.0.tar.gz | tar -xz -C /usr/local/
+RUN cd /usr/local && ln -s ./hadoop-2.7.0 hadoop
 
 ENV HADOOP_PREFIX /usr/local/hadoop
 ENV HADOOP_COMMON_HOME /usr/local/hadoop
@@ -101,10 +102,10 @@ RUN service sshd start && $HADOOP_PREFIX/etc/hadoop/hadoop-env.sh && $HADOOP_PRE
 CMD ["/etc/bootstrap.sh", "-d"]
 
 # Hdfs ports
-EXPOSE 50010 50020 50070 50075 50090 8020 9000
+EXPOSE 50010 50020 50070 50075 50090
 # Mapred ports
-EXPOSE 10020 19888
+EXPOSE 19888
 #Yarn ports
 EXPOSE 8030 8031 8032 8033 8040 8042 8088
 #Other ports
-EXPOSE 49707 2122
+EXPOSE 49707 2122   
