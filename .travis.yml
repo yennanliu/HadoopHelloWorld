@@ -1,0 +1,13 @@
+sudo: required
+
+language: java
+
+services:
+  - docker
+  
+script:
+  - docker build . -t hadoop_env
+  - docker run -it hadoop_env /etc/bootstrap.sh -c "cd /usr/local/hadoop && bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.1.jar grep input output 'dfs[a-z.]+' && bin/hdfs dfs -cat output/*"
+
+after_success:
+  - echo 'hadoop docker build/test OK!'
