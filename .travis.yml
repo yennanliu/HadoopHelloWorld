@@ -6,7 +6,11 @@ services:
   - docker
   
 script:
-  - cd && cd  HadoopHelloWorld/hadoop-hive &&  docker-compose up -d && docker-compose exec hive-server bash -c "hadoop-hive helloworld!"
+  - pwd
+  - ls 
+  - cd hadoop-hive
+  - docker-compose up -d 
+  #- #&& docker-compose exec hive-server bash -c "hadoop-hive helloworld!"
 
 after_success:
   - echo 'hadoop docker build/test OK!'
