@@ -10,6 +10,8 @@ script:
   - ls 
   - cd hadoop-hive
   - docker-compose up -d 
+  - docker ps -a 
+  - docker images
   #- #&& docker-compose exec hive-server bash -c "hadoop-hive helloworld!"
 
 after_success:
