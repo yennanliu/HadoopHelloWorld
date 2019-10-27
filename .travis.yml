@@ -13,7 +13,7 @@ script:
   - docker ps -a 
   - docker images
   - docker-compose exec hive-server bash -c "ls && ls hive && pwd && echo '123'"
-  - docker-compose exec hive-server bash -c "git clone https://github.com/yennanliu/HadoopHelloWorld.git && cd HadoopHelloWorld/hadoop-hive && bash ddl/hive_ddl.sh"
+  #- docker-compose exec hive-server bash -c "git clone https://github.com/yennanliu/HadoopHelloWorld.git && bash HadoopHelloWorld/hadoop-hive/ddl/hive_ddl.sh"
 
 after_success:
   - echo 'hadoop docker build/test OK!'
