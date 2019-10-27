@@ -40,6 +40,9 @@ ADD conf/hive-log4j2.properties $HIVE_HOME/conf
 ADD conf/ivysettings.xml $HIVE_HOME/conf
 ADD conf/llap-daemon-log4j2.properties $HIVE_HOME/conf
 
+#Add hive ddl
+ADD ddl/hive_ddl.sh $HIVE_HOME/ddl
+
 COPY startup.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/startup.sh
 
