@@ -24,7 +24,7 @@ services:
   hive-server:
     image: bde2020/hive:2.3.2-postgresql-metastore
     volumes: 
-      - ${PWD}/hadoop-hive:.
+      - ${PWD}/hadoop-hive:/hadoop-hive
     env_file:
       - ./hadoop-hive.env
     environment:
