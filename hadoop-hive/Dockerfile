@@ -1,7 +1,9 @@
 FROM bde2020/hadoop-base:2.0.0-hadoop2.7.4-java8
 
-MAINTAINER Yiannis Mouchakis <gmouchakis@iit.demokritos.gr>
-MAINTAINER Ivan Ermilov <ivan.s.ermilov@gmail.com>
+MAINTAINER yennj12
+
+#Add hive ddl
+ADD . /hadoop-hive 
 
 # Allow buildtime config of HIVE_VERSION
 ARG HIVE_VERSION
@@ -41,9 +43,6 @@ ADD conf/hive-exec-log4j2.properties $HIVE_HOME/conf
 ADD conf/hive-log4j2.properties $HIVE_HOME/conf
 ADD conf/ivysettings.xml $HIVE_HOME/conf
 ADD conf/llap-daemon-log4j2.properties $HIVE_HOME/conf
-
-#Add hive ddl
-ADD ddl/hive_ddl.sh $HIVE_HOME/ddl
 
 COPY startup.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/startup.sh
