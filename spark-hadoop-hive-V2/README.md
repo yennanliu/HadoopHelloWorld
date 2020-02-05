@@ -1,6 +1,15 @@
 ### Modify from 
 - https://github.com/earthquakesan/hdfs-spark-hive-dev-setup
 
+### Quick start
+
+```bash
+git clone https://github.com/yennanliu/HadoopHelloWorld.git 
+cd HadoopHelloWorld/spark-hadoop-hive-V2
+make download
+```
+
+
 # HDFS/Spark/Hive Local Development Setup
 
 This repository provides the installation instructions for
