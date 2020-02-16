@@ -13,7 +13,7 @@
 - Hadoop Spark  
 - Hadoop demo scripts 
 
-## Quick Start 
+## Quick Start (Manually)
 
 ```bash
 # run mrjob demo 
@@ -23,6 +23,16 @@ $ python hadoophelloworld/my_word_count.py README.md
 $ python hadoophelloworld/RatingsBreakdown.py data/ml-100k/u.data
 
 ```
+
+## Quick Start (Docker)
+
+```bash
+$ docker pull yennanliu/hadoop-stand-alone:v1
+# docker images
+$ docker run -it <IMAGE_ID>
+
+```
+
 
 ## Development 
 - `dev`
