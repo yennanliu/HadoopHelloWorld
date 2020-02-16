@@ -14,7 +14,15 @@
 - Hadoop demo scripts 
 
 ## Quick Start 
-- `dev`
+
+```bash
+# run mrjob demo 
+$ python hadoophelloworld/my_word_count.py README.md 
+
+# run RatingsBreakdown
+$ python hadoophelloworld/RatingsBreakdown.py data/ml-100k/u.data
+
+```
 
 ## Development 
 - `dev`
