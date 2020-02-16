@@ -6,7 +6,7 @@ WORKDIR /root
 
 RUN apt-get -qq update && apt-get -qq install -y openssh-server openjdk-8-jdk wget
 
-RUN wget https://s3-us-west-1.amazonaws.com/apache-hadoop-2-8-0/hadoop-2.8.0.tar.gz && \
+RUN wget https://archive.apache.org/dist/hadoop/common/hadoop-2.8.0/hadoop-2.8.0.tar.gz && \
 	tar -xzvf hadoop-2.8.0.tar.gz && \
 	mv hadoop-2.8.0 /usr/local/hadoop && \
     rm hadoop-2.8.0.tar.gz
