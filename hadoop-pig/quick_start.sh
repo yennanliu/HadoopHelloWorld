@@ -7,3 +7,5 @@ type=bind,\
 source="$(pwd)"/.,\
 target=/HadoopHelloWorld \
 -i -t ipedrazas/hadoop-pig /etc/bootstrap.sh -bash -c "mv HadoopHelloWorld/HadoopHelloWorld/data data && pig -x local"
+
+# to fix : how to auto copy data and bootstrap.sh then access pig console
