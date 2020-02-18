@@ -38,5 +38,6 @@ $ docker run -it <IMAGE_ID>
 - `dev`
 
 ## Ref 
-- [Hadoop course material Udemy](https://sundog-education.com/hadoop-materials/) Udemy Hadoop course resources
-- [Mrjob](https://mrjob.readthedocs.io/en/latest/) -- write MapReduce jobs via python and running on several platforms
+- [Hadoop course material Udemy](https://sundog-education.com/hadoop-materials/) - Udemy Hadoop course resources
+- [Mrjob](https://mrjob.readthedocs.io/en/latest/) - write MapReduce jobs via python and running on several platforms
+- [Ambari](https://docs.cloudera.com/HDPDocuments/Ambari-2.7.5.0/bk_ambari-installation/content/ch_Deploy_and_Configure_a_HDP_Cluster.html) - Apache Ambari Installation : Installing, Configuring, and Deploying a Cluster
