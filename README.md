@@ -7,7 +7,6 @@
 * [utility_Scala](https://github.com/yennanliu/utility_Scala) - Scala/Spark programming basic demo 
 
 ## Main Covers  
-
 - Hadoop stand-alone 
 - Hadoop hive
 - Hadoop Spark  
@@ -27,15 +26,29 @@ $ python hadoophelloworld/RatingsBreakdown.py data/ml-100k/u.data
 ## Quick Start (Docker)
 
 ```bash
+# hadoop-stand-alone
 $ docker pull yennanliu/hadoop-stand-alone:v1
 # docker images
 $ docker run -it <IMAGE_ID>
 
 ```
 
+```bash
+# hadoop-pig
+$ bash hadoop-pig/quick_start.sh
+
+```
 
 ## Development 
 - `dev`
+
+## TODO 
+
+<details>
+<summary>TODO</summary>
+- Build hadoop from `AWS EC2` from scratch 
+- Build hadoop from `local` from scratch 
+</details>
 
 ## Ref 
 - [Hadoop course material Udemy](https://sundog-education.com/hadoop-materials/) - Udemy Hadoop course resources
