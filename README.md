@@ -1,12 +1,14 @@
 <h1 align="center">HADOOP-HELLO-WORLD</h1>
 <h4 align="center">Basic commands/applications on Apche Hadoop ecosystem </h4>
 
-## Relative Projects 
+## Relative Projects
+
 * [spark_emr_dev](https://github.com/yennanliu/spark_emr_dev) - Demo of submitting Hadoop ecosystem jobs to AWS EMR
 * [spark-etl-pipeline](https://github.com/yennanliu/spark-etl-pipeline) - Demo of various Spark ETL processes
 * [utility_Scala](https://github.com/yennanliu/utility_Scala) - Scala/Spark programming basic demo 
 
-## Main Covers  
+## Main Covers 
+ 
 - Hadoop stand-alone 
 - Hadoop hive
 - Hadoop Spark  
@@ -39,15 +41,21 @@ $ bash hadoop-pig/quick_start.sh
 
 ```
 
-## Development 
-- `dev`
+## Development
+
+- Culster-managment 
+- Trouble-shooting
+- Unit-test
+- Dev-op
 
 ## TODO 
 
 <details>
 <summary>TODO</summary>
+
 - Build hadoop from `AWS EC2` from scratch 
 - Build hadoop from `local` from scratch 
+
 </details>
 
 ## Ref 
