@@ -59,6 +59,18 @@ $ bash hadoop-pig/quick_start.sh
 </details>
 
 ## Ref 
+
+<details>
+<summary>TODO</summary>
+
 - [Hadoop course material Udemy](https://sundog-education.com/hadoop-materials/) - Udemy Hadoop course resources
 - [Mrjob](https://mrjob.readthedocs.io/en/latest/) - write MapReduce jobs via python and running on several platforms
 - [Ambari](https://docs.cloudera.com/HDPDocuments/Ambari-2.7.5.0/bk_ambari-installation/content/ch_Deploy_and_Configure_a_HDP_Cluster.html) - Apache Ambari Installation : Installing, Configuring, and Deploying a Cluster
+
+- Install Hadoop from scratch (AWS)
+	- https://dzone.com/articles/rion-a-fast-compact-versatile-data-format
+	- https://www.edureka.co/blog/install-apache-hadoop-cluster/
+	- https://blog.gaelfoppolo.com/lets-try-hadoop-on-aws-13a23e641490
+	- https://blog.insightdatascience.com/spinning-up-a-free-hadoop-cluster-step-by-step-c406d56bae42
+
+</details>
