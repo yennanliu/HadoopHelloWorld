@@ -68,6 +68,7 @@ $ bash hadoop-pig/quick_start.sh
 - [Ambari](https://docs.cloudera.com/HDPDocuments/Ambari-2.7.5.0/bk_ambari-installation/content/ch_Deploy_and_Configure_a_HDP_Cluster.html) - Apache Ambari Installation : Installing, Configuring, and Deploying a Cluster
 
 - Install Hadoop from scratch (AWS)
+	- https://medium.com/nibbleai/install-a-hadoop-cluster-on-aws-ec2-8c40dac490e
 	- https://dzone.com/articles/rion-a-fast-compact-versatile-data-format
 	- https://www.edureka.co/blog/install-apache-hadoop-cluster/
 	- https://blog.gaelfoppolo.com/lets-try-hadoop-on-aws-13a23e641490
