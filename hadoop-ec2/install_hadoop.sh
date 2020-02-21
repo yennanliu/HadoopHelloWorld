@@ -7,8 +7,7 @@ sudo apt-get install openjdk-8-jdk-headless -y
 # install hadoop
 export HADOOP_VERSION=hadoop-3.1.1
 
-wget \
-http://apache.crihan.fr/dist/hadoop/common/${HADOOP_VERSION}/${HADOOP_VERSION}.tar.gz
+wget https://archive.apache.org/dist/hadoop/core/${HADOOP_VERSION}/${HADOOP_VERSION}.tar.gz
 
 tar -xzf $HOME/${HADOOP_VERSION}.tar.gz -C $HOME
 
