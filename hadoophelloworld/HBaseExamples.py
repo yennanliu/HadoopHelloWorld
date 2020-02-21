@@ -17,10 +17,12 @@ ratings.create('rating')
 print("Parsing the ml-100k ratings data...\n")
 ratingFile = open("data/ml-100k/u.data", "r")
 
+# use batch to insert all data into HBASE at once
 batch = ratings.batch()
 
 for line in ratingFile:
     (userID, movieID, rating, timestamp) = line.split()
+    # update batch
     batch.update(userID, {'rating': {movieID: rating}})
 
 ratingFile.close()
