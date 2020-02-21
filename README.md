@@ -69,7 +69,7 @@ $ bash hadoop-pig/quick_start.sh
 
 - Install Hadoop from scratch (AWS)
 	- https://medium.com/nibbleai/install-a-hadoop-cluster-on-aws-ec2-8c40dac490e
-	- https://dzone.com/articles/rion-a-fast-compact-versatile-data-format
+	- https://dzone.com/articles/deep-dive-into-apache-flinks-tumblingwindow
 	- https://www.edureka.co/blog/install-apache-hadoop-cluster/
 	- https://blog.gaelfoppolo.com/lets-try-hadoop-on-aws-13a23e641490
 	- https://blog.insightdatascience.com/spinning-up-a-free-hadoop-cluster-step-by-step-c406d56bae42
