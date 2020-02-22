@@ -16,8 +16,8 @@ sudo apt install openjdk-8-jre-headless -y
 mkdir hadoopdata
 wget https://archive.apache.org/dist/hadoop/core/${HADOOP_VERSION}/${HADOOP_VERSION}.tar.gz
 sudo tar xzf ${HADOOP_VERSION}.tar.gz 
-sudo mv ${HADOOP_VERSION} /usr/local/hadoop
-sudo chown -R ubuntu /usr/local/hadoop/
+#sudo cp ${HADOOP_VERSION} /usr/local/hadoop
+#sudo chown -R ubuntu /usr/local/hadoop/
 
 # 4) update ~/.bashrc
 
@@ -27,17 +27,17 @@ export HADOOP_OPTS="-Djava.library.path=${HADOOP_HOME}/lib"
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 PATH=$PATH:$JAVA_HOME/bin:${HADOOP_HOME}/bin:${HADOOP_HOME}/sbin
 
-echo "export HADOOP_HOME=/home/ubuntu/${HADOOP_VERSION}"  >> ~/.bashrc
-echo "export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native"  >> ~/.bashrc
-echo "export HADOOP_OPTS={"-Djava.library.path=$HADOOP_HOME/lib"}"  >> ~/.bashrc
-echo "export JAVA_HOME=/usr/lib/jvm/java-8-oracle"  >> ~/.bashrc
-echo "PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin"  >> ~/.bashrc
+# echo "export HADOOP_HOME=/home/ubuntu/${HADOOP_VERSION}"  >> ~/.bashrc
+# echo "export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native"  >> ~/.bashrc
+# echo "export HADOOP_OPTS={"-Djava.library.path=$HADOOP_HOME/lib"}"  >> ~/.bashrc
+# echo "export JAVA_HOME=/usr/lib/jvm/java-8-oracle"  >> ~/.bashrc
+# echo "PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin"  >> ~/.bashrc
 
 source ~/.bashrc
 
 # 5) Setting hadoop environment for password less ssh access
-ssh-keygen -t rsa -P ''
-cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
+ssh-keygen -t rsa -P '' 
+cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys 
 
 # 6) update sshd_config 
 # /etc/ssh/sshd_config
@@ -52,19 +52,19 @@ exit
 git clone https://github.com/yennanliu/HadoopHelloWorld.git
 
 # 8) update core-site.xml
-cp -f HadoopHelloWorld/hadoop-ec2/core-site.xml /usr/local/hadoop/${HADOOP_VERSION}/etc/hadoop/core-site.xml
+sudo cp -f HadoopHelloWorld/hadoop-ec2/core-site.xml /home/ubuntu/${HADOOP_VERSION}/etc/hadoop/core-site.xml
 
 # 9) update hadoop-env.sh
-cp -f HadoopHelloWorld/hadoop-ec2/hadoop-env.sh /usr/local/hadoop/${HADOOP_VERSION}/etc/hadoop/hadoop-env.sh
+sudo cp -f HadoopHelloWorld/hadoop-ec2/hadoop-env.sh /home/ubuntu/${HADOOP_VERSION}/etc/hadoop/hadoop-env.sh
 
 # 10) update yarn-site.xml
-cp -f HadoopHelloWorld/hadoop-ec2/yarn-site.xml /usr/local/hadoop/${HADOOP_VERSION}/etc/hadoop//yarn-site.xml
+sudo cp -f HadoopHelloWorld/hadoop-ec2/yarn-site.xml /home/ubuntu/${HADOOP_VERSION}/etc/hadoop//yarn-site.xml
 
 # 11) update hdfs-site.xml
-cp -f HadoopHelloWorld/hadoop-ec2/hdfs-site.xml /usr/local/hadoop/${HADOOP_VERSION}/etc/hadoop/hdfs-site.xml
+sudo cp -f HadoopHelloWorld/hadoop-ec2/hdfs-site.xml /home/ubuntu/${HADOOP_VERSION}/etc/hadoop/hdfs-site.xml
 
 # 12) update mapred-site.xml
-cp -f HadoopHelloWorld/hadoop-ec2/mapred-site.xml /usr/local/hadoop/${HADOOP_VERSION}/etc/hadoop/mapred-site.xml
+sudo cp -f HadoopHelloWorld/hadoop-ec2/mapred-site.xml /home/ubuntu/${HADOOP_VERSION}/etc/hadoop/mapred-site.xml
 
 # 13) format HDFS (init)
 hdfs namenode -format
