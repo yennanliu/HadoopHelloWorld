@@ -1,14 +1,15 @@
 #!/bin/sh
 
 # 1) declare env var
-export HADOOP_VERSION=hadoop-2.8.2
+export HADOOP_VERSION=hadoop-2.7.3
 
 # 2) prerequisite
 sudo apt-get install python-software-properties
-sudo add-apt-repository ppa:webupd8team/java
+sudo add-apt-repository ppa:webupd8team/java -y
 sudo apt-get update
 #sudo apt-get install oracle-java8-installer
 #sudo apt-get install default-jdk -y
+sudo apt install openjdk-8-jdk-headless
 sudo apt install openjdk-8-jre-headless -y 
 
 
@@ -21,6 +22,7 @@ sudo tar xzf ${HADOOP_VERSION}.tar.gz
 
 # 4) update ~/.bashrc
 
+export HADOOP_VERSION=hadoop-2.7.3
 export HADOOP_HOME=/home/ubuntu/${HADOOP_VERSION}
 export HADOOP_COMMON_LIB_NATIVE_DIR=${HADOOP_HOME}/lib/native
 export HADOOP_OPTS="-Djava.library.path=${HADOOP_HOME}/lib"
@@ -70,12 +72,12 @@ sudo cp -f HadoopHelloWorld/hadoop-ec2/mapred-site.xml /home/ubuntu/${HADOOP_VER
 hdfs namenode -format
 
 # 14) start dfs, yarn
-bash /home/ubuntu/{HADOOP_VERSION}/sbin/start-dfs.sh
-bash /home/ubuntu/{HADOOP_VERSION}/sbin/start-yarn.sh
+bash /home/ubuntu/${HADOOP_VERSION}/sbin/start-dfs.sh 
+bash /home/ubuntu/${HADOOP_VERSION}/sbin/start-yarn.sh
 
 # 15) check hadoop processes /daemons running on hadoop
 jps 
 
 # 16) stop dfs, yarn
-bash /home/ubuntu/{HADOOP_VERSION}/sbin/start-dfs.sh
-bash /home/ubuntu/{HADOOP_VERSION}/sbin/start-yarn.sh
+bash /home/ubuntu/${HADOOP_VERSION}/sbin/start-dfs.sh
+bash /home/ubuntu/${HADOOP_VERSION}/sbin/start-yarn.sh
