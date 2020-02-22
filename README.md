@@ -61,7 +61,7 @@ $ bash hadoop-pig/quick_start.sh
 ## Ref 
 
 <details>
-<summary>TODO</summary>
+<summary>Ref</summary>
 
 - [Hadoop course material Udemy](https://sundog-education.com/hadoop-materials/) - Udemy Hadoop course resources
 - [Mrjob](https://mrjob.readthedocs.io/en/latest/) - write MapReduce jobs via python and running on several platforms
@@ -69,7 +69,8 @@ $ bash hadoop-pig/quick_start.sh
 
 - Install Hadoop from scratch (AWS)
 	- https://medium.com/nibbleai/install-a-hadoop-cluster-on-aws-ec2-8c40dac490e
-	- https://dzone.com/articles/deep-dive-into-apache-flinks-tumblingwindow
+	- https://dzone.com/articles/how-set-multi-node-hadoop
+	- https://dzone.com/articles/how-set-multi-node-hadoop-0
 	- https://www.edureka.co/blog/install-apache-hadoop-cluster/
 	- https://blog.gaelfoppolo.com/lets-try-hadoop-on-aws-13a23e641490
 	- https://blog.insightdatascience.com/spinning-up-a-free-hadoop-cluster-step-by-step-c406d56bae42
