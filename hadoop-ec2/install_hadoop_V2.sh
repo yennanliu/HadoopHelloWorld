@@ -9,6 +9,7 @@ sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install oracle-java8-installer
 sudo apt-get install default-jdk -y 
+sudo apt install openjdk-8-jre-headless -y 
 
 # 3) install hadoop 
 mkdir hadoopdata
@@ -73,6 +74,6 @@ bash /home/ubuntu/{HADOOP_VERSION}/sbin/start-yarn.sh
 # 15) check hadoop processes /daemons running on hadoop
 jps 
 
-# 15) stop dfs, yarn
+# 16) stop dfs, yarn
 bash /home/ubuntu/{HADOOP_VERSION}/sbin/start-dfs.sh
 bash /home/ubuntu/{HADOOP_VERSION}/sbin/start-yarn.sh
