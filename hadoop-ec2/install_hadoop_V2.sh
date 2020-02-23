@@ -8,10 +8,8 @@ sudo apt-get install python-software-properties
 sudo add-apt-repository ppa:webupd8team/java -y
 sudo apt-get update
 #sudo apt-get install oracle-java8-installer
-#sudo apt-get install default-jdk -y
-sudo apt install openjdk-8-jdk-headless
+sudo apt-get install default-jdk -y
 sudo apt install openjdk-8-jre-headless -y 
-
 
 # 3) install hadoop 
 mkdir hadoopdata
@@ -21,7 +19,6 @@ sudo tar xzf ${HADOOP_VERSION}.tar.gz
 #sudo chown -R ubuntu /usr/local/hadoop/
 
 # 4) update ~/.bashrc
-
 export HADOOP_VERSION=hadoop-2.7.3
 export HADOOP_HOME=/home/ubuntu/${HADOOP_VERSION}
 export HADOOP_COMMON_LIB_NATIVE_DIR=${HADOOP_HOME}/lib/native
