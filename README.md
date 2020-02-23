@@ -23,6 +23,20 @@ $ python hadoophelloworld/my_word_count.py README.md
 # run RatingsBreakdown
 $ python hadoophelloworld/RatingsBreakdown.py data/ml-100k/u.data
 
+# run run spark-cassandra (dev)
+# 2.11 : scala 2.11 | 2.0.0. : spark 2.0.0
+# please change this param with your case accordingly 
+$ spark-submit \
+  --packages datastax:spark-cassendra-connector:2.0.0-M2-s_2.11 \
+  hadoophelloworld/cassendraSpark.py 
+
+# run spark-mongo (dev)
+# 2.11 : scala 2.11 | 2.0.0. : spark 2.0.0
+# please change this param with your case accordingly 
+$ spark-submit \
+  --packages org.mongodb.spark:mongo-spark-connector_2.11:2.0.0 \
+  hadoophelloworld/MongoSpark.py 
+
 ```
 
 ## Quick Start (Docker)
