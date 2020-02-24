@@ -28,16 +28,16 @@ sudo chown -R ubuntu /home/ubuntu/${HADOOP_VERSION}/
 # PATH=$PATH:$JAVA_HOME/bin:${HADOOP_HOME}/bin:${HADOOP_HOME}/sbin
 
 echo "export HADOOP_VERSION=hadoop-2.7.3"  >> ~/.bashrc
-echo "export HADOOP_HOME=/home/ubuntu/${HADOOP_VERSION}"  >> ~/.bashrc
+export HADOOP_VERSION=hadoop-2.7.3 | echo "export HADOOP_HOME=/home/ubuntu/${HADOOP_VERSION}"  >> ~/.bashrc
 echo "export HADOOP_COMMON_LIB_NATIVE_DIR=${HADOOP_HOME}/lib/native"  >> ~/.bashrc
-echo "export HADOOP_OPTS={"-Djava.library.path=$HADOOP_HOME/lib"}" >> ~/.bashrc
+echo "export HADOOP_OPTS='"-Djava.library.path=$HADOOP_HOME/lib"'" >> ~/.bashrc
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-oracle"  >> ~/.bashrc
 echo "PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin"  >> ~/.bashrc
 
 source ~/.bashrc
 
 # 5) Setting hadoop environment for password less ssh access
-ssh-keygen -t rsa -P '' 
+ssh-keygen -t rsa -P ''  <<< y
 cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys 
 
 # 6) update sshd_config 
@@ -71,8 +71,8 @@ sudo cp -f HadoopHelloWorld/hadoop-ec2/mapred-site.xml /home/ubuntu/${HADOOP_VER
 hdfs namenode -format
 
 # 14) start dfs, yarn
-bash /home/ubuntu/${HADOOP_VERSION}/sbin/start-dfs.sh 
-bash /home/ubuntu/${HADOOP_VERSION}/sbin/start-yarn.sh
+bash /home/ubuntu/${HADOOP_VERSION}/sbin/start-dfs.sh  <<< y
+bash /home/ubuntu/${HADOOP_VERSION}/sbin/start-yarn.sh <<< y 
 
 # 15) check hadoop processes /daemons running on hadoop
 sudo apt install openjdk-8-jdk-headless 
