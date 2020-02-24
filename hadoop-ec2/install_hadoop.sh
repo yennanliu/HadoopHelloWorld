@@ -1,5 +1,6 @@
 #!/bin/sh
 
+
 # 1) declare env var
 export HADOOP_VERSION=hadoop-2.7.3
 
@@ -20,25 +21,32 @@ sudo cp ${HADOOP_VERSION} /usr/local/hadoop
 sudo chown -R ubuntu /home/ubuntu/${HADOOP_VERSION}/ 
 
 # 4) update ~/.bashrc
-# export HADOOP_VERSION=hadoop-2.7.3
-# export HADOOP_HOME=/home/ubuntu/${HADOOP_VERSION}
-# export HADOOP_COMMON_LIB_NATIVE_DIR=${HADOOP_HOME}/lib/native
-# export HADOOP_OPTS="-Djava.library.path=${HADOOP_HOME}/lib"
-# export JAVA_HOME=/usr/lib/jvm/java-8-oracle
-# PATH=$PATH:$JAVA_HOME/bin:${HADOOP_HOME}/bin:${HADOOP_HOME}/sbin
+export HADOOP_VERSION=hadoop-2.7.3
+export HADOOP_HOME=/home/ubuntu/${HADOOP_VERSION}
+export HADOOP_COMMON_LIB_NATIVE_DIR=${HADOOP_HOME}/lib/native
+export HADOOP_OPTS="-Djava.library.path=${HADOOP_HOME}/lib"
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+#PATH=$PATH:$JAVA_HOME/bin:${HADOOP_HOME}/bin:${HADOOP_HOME}/sbin
 
 echo "export HADOOP_VERSION=hadoop-2.7.3"  >> ~/.bashrc
-export HADOOP_VERSION=hadoop-2.7.3 | echo "export HADOOP_HOME=/home/ubuntu/${HADOOP_VERSION}"  >> ~/.bashrc
+echo "export HADOOP_HOME=/home/ubuntu/${HADOOP_VERSION}"  >> ~/.bashrc
 echo "export HADOOP_COMMON_LIB_NATIVE_DIR=${HADOOP_HOME}/lib/native"  >> ~/.bashrc
 echo "export HADOOP_OPTS='"-Djava.library.path=$HADOOP_HOME/lib"'" >> ~/.bashrc
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-oracle"  >> ~/.bashrc
 echo "PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin"  >> ~/.bashrc
 
-source ~/.bashrc
+#source ~/.bashrc
+. ~/.bashrc
 
 # 5) Setting hadoop environment for password less ssh access
-ssh-keygen -t rsa -P ''  <<< y
-cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys 
+#ssh-keygen -t rsa -P ''  <<< y
+#cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys 
+# ssh-keygen -t rsa -N ''  <<< y
+# cat ~/.ssh/id_rsa >> $HOME/.ssh/authorized_keys 
+
+ssh-keygen -b 2048 -t rsa -f /tmp/sshkey -q -N ""
+cat /tmp/sshkey >> $HOME/.ssh/authorized_keys 
+
 
 # 6) update sshd_config 
 # /etc/ssh/sshd_config
