@@ -27,7 +27,8 @@ sudo chown -R ubuntu /home/ubuntu/${HADOOP_VERSION}/
 # export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 # PATH=$PATH:$JAVA_HOME/bin:${HADOOP_HOME}/bin:${HADOOP_HOME}/sbin
 
-echo "export HADOOP_HOME=${HADOOP_VERSION}"  >> ~/.bashrc
+echo "export HADOOP_VERSION=hadoop-2.7.3"  >> ~/.bashrc
+echo "export HADOOP_HOME=/home/ubuntu/${HADOOP_VERSION}"  >> ~/.bashrc
 echo "export HADOOP_COMMON_LIB_NATIVE_DIR=${HADOOP_HOME}/lib/native"  >> ~/.bashrc
 echo "export HADOOP_OPTS={"-Djava.library.path=$HADOOP_HOME/lib"}" >> ~/.bashrc
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-oracle"  >> ~/.bashrc
@@ -78,5 +79,5 @@ sudo apt install openjdk-8-jdk-headless
 jps 
 
 # 16) stop dfs, yarn
-bash /home/ubuntu/${HADOOP_VERSION}/sbin/start-dfs.sh
-bash /home/ubuntu/${HADOOP_VERSION}/sbin/start-yarn.sh
+bash /home/ubuntu/${HADOOP_VERSION}/sbin/stop-dfs.sh
+bash /home/ubuntu/${HADOOP_VERSION}/sbin/stop-yarn.sh
