@@ -74,6 +74,7 @@ bash /home/ubuntu/${HADOOP_VERSION}/sbin/start-dfs.sh
 bash /home/ubuntu/${HADOOP_VERSION}/sbin/start-yarn.sh
 
 # 15) check hadoop processes /daemons running on hadoop
+sudo apt install openjdk-8-jdk-headless 
 jps 
 
 # 16) stop dfs, yarn

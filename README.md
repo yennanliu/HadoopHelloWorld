@@ -16,6 +16,9 @@
 
 ## Quick Start (Manually)
 
+<details>
+<summary>Quick Start (Manually)</summary>
+
 ```bash
 # run mrjob demo 
 $ python hadoophelloworld/my_word_count.py README.md 
@@ -39,7 +42,27 @@ $ spark-submit \
 
 ```
 
+```bash
+# Hadoop on ec2
+# 1) follow step by step 
+# hadoop-ec2/install_hadoop.sh
+# 2) run the demo map-reduce scipt
+hadoop jar /home/ubuntu/hadoop-2.7.3/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.3.jar pi 100 10000
+
+# 3) check the UI
+# namenode 
+<ec2_pulic_ip>:8088
+# datanode 
+<ec2_pulic_ip>:8042/node
+
+```
+</details>
+
 ## Quick Start (Docker)
+
+<details>
+<summary>Quick Start (Docker)</summary>
+
 
 ```bash
 # hadoop-stand-alone
@@ -54,6 +77,7 @@ $ docker run -it <IMAGE_ID>
 $ bash hadoop-pig/quick_start.sh
 
 ```
+</details>
 
 ## Development
 
