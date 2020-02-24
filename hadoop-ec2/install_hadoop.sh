@@ -20,18 +20,18 @@ sudo cp ${HADOOP_VERSION} /usr/local/hadoop
 sudo chown -R ubuntu /home/ubuntu/${HADOOP_VERSION}/ 
 
 # 4) update ~/.bashrc
-export HADOOP_VERSION=hadoop-2.7.3
-export HADOOP_HOME=/home/ubuntu/${HADOOP_VERSION}
-export HADOOP_COMMON_LIB_NATIVE_DIR=${HADOOP_HOME}/lib/native
-export HADOOP_OPTS="-Djava.library.path=${HADOOP_HOME}/lib"
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle
-PATH=$PATH:$JAVA_HOME/bin:${HADOOP_HOME}/bin:${HADOOP_HOME}/sbin
+# export HADOOP_VERSION=hadoop-2.7.3
+# export HADOOP_HOME=/home/ubuntu/${HADOOP_VERSION}
+# export HADOOP_COMMON_LIB_NATIVE_DIR=${HADOOP_HOME}/lib/native
+# export HADOOP_OPTS="-Djava.library.path=${HADOOP_HOME}/lib"
+# export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+# PATH=$PATH:$JAVA_HOME/bin:${HADOOP_HOME}/bin:${HADOOP_HOME}/sbin
 
-# echo "export HADOOP_HOME=/home/ubuntu/${HADOOP_VERSION}"  >> ~/.bashrc
-# echo "export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native"  >> ~/.bashrc
-# echo "export HADOOP_OPTS={"-Djava.library.path=$HADOOP_HOME/lib"}"  >> ~/.bashrc
-# echo "export JAVA_HOME=/usr/lib/jvm/java-8-oracle"  >> ~/.bashrc
-# echo "PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin"  >> ~/.bashrc
+echo "export HADOOP_HOME=${HADOOP_VERSION}"  >> ~/.bashrc
+echo "export HADOOP_COMMON_LIB_NATIVE_DIR=${HADOOP_HOME}/lib/native"  >> ~/.bashrc
+echo "export HADOOP_OPTS={"-Djava.library.path=$HADOOP_HOME/lib"}" >> ~/.bashrc
+echo "export JAVA_HOME=/usr/lib/jvm/java-8-oracle"  >> ~/.bashrc
+echo "PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin"  >> ~/.bashrc
 
 source ~/.bashrc
 
