@@ -43,7 +43,6 @@ echo "PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin"  >> ~/.bashr
 #cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys 
 # ssh-keygen -t rsa -N ''  <<< y
 # cat ~/.ssh/id_rsa >> $HOME/.ssh/authorized_keys 
-
 ssh-keygen -b 2048 -t rsa -f /tmp/sshkey -q -N ""
 cat /tmp/sshkey >> $HOME/.ssh/authorized_keys 
 
@@ -67,7 +66,7 @@ sudo cp -f HadoopHelloWorld/hadoop-ec2/core-site.xml /home/ubuntu/${HADOOP_VERSI
 sudo cp -f HadoopHelloWorld/hadoop-ec2/hadoop-env.sh /home/ubuntu/${HADOOP_VERSION}/etc/hadoop/hadoop-env.sh
 
 # 10) update yarn-site.xml
-sudo cp -f HadoopHelloWorld/hadoop-ec2/yarn-site.xml /home/ubuntu/${HADOOP_VERSION}/etc/hadoop//yarn-site.xml
+sudo cp -f HadoopHelloWorld/hadoop-ec2/yarn-site.xml /home/ubuntu/${HADOOP_VERSION}/etc/hadoop/yarn-site.xml
 
 # 11) update hdfs-site.xml
 sudo cp -f HadoopHelloWorld/hadoop-ec2/hdfs-site.xml /home/ubuntu/${HADOOP_VERSION}/etc/hadoop/hdfs-site.xml
