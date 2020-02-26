@@ -4,6 +4,12 @@ import re
 
 WORD_RE = re.compile(r"[\w']+")
 
+
+def print_ingest_data():
+    with open("README.md") as f:
+        for i in f:
+            print (WORD_RE.findall(i))
+
 class MRWordCount(MRJob):
 
     def steps(self):
