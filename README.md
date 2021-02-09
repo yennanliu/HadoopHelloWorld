@@ -58,6 +58,19 @@ hadoop jar /home/ubuntu/hadoop-2.7.3/share/hadoop/mapreduce/hadoop-mapreduce-exa
 ```
 </details>
 
+## Quick Start (Docker-compose)
+
+<details>
+<summary> Quick Start (Docker-compose)</summary>
+
+
+```bash
+docker-compose -f docker-compose-hadoop-namenode-datanode-spark.yml up --build
+
+```
+</details>
+
+
 ## Quick Start (Docker)
 
 <details>
