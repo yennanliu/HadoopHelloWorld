@@ -1,6 +1,11 @@
 <h1 align="center">HADOOP-HELLO-WORLD</h1>
 <h4 align="center">Basic commands/applications on Apche Hadoop ecosystem </h4>
 
+### HDFS Architecture
+
+- [hdfs 3.0 architecture](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html#:~:text=HDFS%20has%20a%20master%2Fslave,access%20to%20files%20by%20clients.)
+<p align="center"><img src ="https://github.com/yennanliu/HadoopHelloWorld/blob/master/doc/pic/hdfsarchitecture.png" width="2000" height="300"></p>
+
 ## Relative Projects
 
 * [spark_emr_dev](https://github.com/yennanliu/spark_emr_dev) - Demo of submitting Hadoop ecosystem jobs to AWS EMR
