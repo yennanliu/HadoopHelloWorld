@@ -131,4 +131,7 @@ $ bash hadoop-pig/quick_start.sh
 	- https://blog.gaelfoppolo.com/lets-try-hadoop-on-aws-13a23e641490
 	- https://blog.insightdatascience.com/spinning-up-a-free-hadoop-cluster-step-by-step-c406d56bae42
 
+- Install Hadoop on mac
+	- https://github.com/yennanliu/utility_shell/blob/master/hadoop/install_hadoop_mac.sh
+
 </details>
