@@ -1,2 +1,4 @@
 .DS_Store
 hadoopJava/target/classes/*
+hadoopJava/.idea
+hadoopJava/.idea/*
