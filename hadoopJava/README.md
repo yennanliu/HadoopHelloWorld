@@ -22,6 +22,7 @@ cd /usr/local/cellar/hadoop/3.3.0/libexec/sbin
 jps
 
 ### 4) Re-run
+cd /usr/local/cellar/hadoop/3.3.0/libexec/sbin
 stop-all.sh
 hadoop namenode -format
 start-all.sh
@@ -29,8 +30,8 @@ start-all.sh
 
 - Endpoints (local)
 	- Namenode : http://localhost:9870/
-	- Yarn UI : http://localhost:8042
-	- Resource Manager (RM), Node Manager : http://localhost:8088
+	- Yarn UI : http://localhost:8088
+	- Resource Manager (RM), Node Manager : http://localhost:8042
 
 - Config local hadoop
 	- https://towardsdatascience.com/installing-hadoop-on-a-mac-ec01c67b003c
