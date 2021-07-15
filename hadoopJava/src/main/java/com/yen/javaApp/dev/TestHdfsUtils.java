@@ -21,8 +21,13 @@ public class TestHdfsUtils {
 
         System.out.println("hdfsUtils = " + hdfsUtils.toString());
 
-        // mkdir 
+        // mkdir
         Boolean makeDir_result =  hdfsUtils.makeDir("/TestHdfsUtils1");
         System.out.println("makeDir_result = " + makeDir_result);
+
+        System.out.println("==================");
+
+        // list file
+        hdfsUtils.listFile("/");
     }
 }

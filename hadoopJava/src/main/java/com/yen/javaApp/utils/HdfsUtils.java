@@ -1,8 +1,6 @@
 package com.yen.javaApp.utils;
 
-import java.io.BufferedWriter;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -35,6 +33,14 @@ public class HdfsUtils {
         } catch (Exception e){
             e.printStackTrace();
             return false;
+        }
+    }
+
+    public void listFile(String dirPath) throws IOException {
+        // https://stackoverflow.com/questions/33807394/list-folder-and-files-of-hdfs-using-java/33807711
+        FileStatus[] fileStatus = this.fs.listStatus(new Path(dirPath));
+        for(FileStatus status : fileStatus){
+            System.out.println(status.getPath().toString());
         }
     }
 }
