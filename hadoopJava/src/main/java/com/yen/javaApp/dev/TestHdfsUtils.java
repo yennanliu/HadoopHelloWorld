@@ -29,5 +29,10 @@ public class TestHdfsUtils {
 
         // list file
         hdfsUtils.listFile("/");
+
+        System.out.println("==================");
+
+        // write file
+        hdfsUtils.writeFile("hadoop 123","/write_output.txt");
     }
 }

@@ -1,6 +1,8 @@
 package com.yen.javaApp.utils;
 
+import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -26,6 +28,32 @@ public class HdfsUtils {
     }
 
     // method
+
+    // https://stackoverflow.com/questions/16000840/write-a-file-in-hdfs-with-java
+    // https://www.edureka.co/community/22410/how-to-write-a-file-in-hdfs-with-java
+    public void writeFile(String content, String filePath) throws IOException {
+        Path _filePath = new Path(filePath);
+        if (! this.fs.exists(_filePath)){
+            System.out.println("file already exist, will delete : " + filePath);
+            fs.delete(_filePath, true);
+        }
+
+        //BufferedWriter br = new BufferedWriter( new OutputStreamWriter( os, "UTF-8" ) );
+        FSDataOutputStream fsDataOutputStream = this.fs.create(_filePath,true);
+        BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(fsDataOutputStream,"UTF-8"));
+
+        try {
+            bufferedWriter.write(content);
+            bufferedWriter.newLine();
+            System.out.println("write file OK");
+        } catch (Exception e){
+            System.out.println("write file failed");
+        } finally {
+            bufferedWriter.close();
+        }
+        //this.fs.close();
+    }
+
     public Boolean makeDir(String dirPath) throws IOException {
         try {
             this.fs.mkdirs(new Path(dirPath));
