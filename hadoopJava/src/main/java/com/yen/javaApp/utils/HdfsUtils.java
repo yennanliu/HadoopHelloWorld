@@ -33,12 +33,11 @@ public class HdfsUtils {
     // https://www.edureka.co/community/22410/how-to-write-a-file-in-hdfs-with-java
     public void writeFile(String content, String filePath) throws IOException {
         Path _filePath = new Path(filePath);
-        if (! this.fs.exists(_filePath)){
-            System.out.println("file already exist, will delete : " + filePath);
-            fs.delete(_filePath, true);
-        }
+//        if (! this.fs.exists(_filePath)){
+//            System.out.println("file already exist, will delete : " + filePath);
+//            fs.delete(_filePath, true);
+//        }
 
-        //BufferedWriter br = new BufferedWriter( new OutputStreamWriter( os, "UTF-8" ) );
         FSDataOutputStream fsDataOutputStream = this.fs.create(_filePath,true);
         BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(fsDataOutputStream,"UTF-8"));
 

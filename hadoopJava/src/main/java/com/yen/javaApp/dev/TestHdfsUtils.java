@@ -35,9 +35,16 @@ public class TestHdfsUtils {
 
         // write file
         hdfsUtils.writeFile("hadoop 123","/write_output.txt");
-        // test write multiple lines
+
+        // write file: test write multiple lines
         String data1 = "hey this is 1st \nand this is 2nd \nthen 3rd :p";
         hdfsUtils.writeFile(data1,"/write_output2.txt");
+
+        // write file : test write to path name with milli second
+        long unixTime = System.currentTimeMillis() / 1000L;
+        System.out.println("unixTime = " + unixTime);
+        String fileNamePattern =  "/file_%s.txt";
+        hdfsUtils.writeFile("hadoop 456",String.format(fileNamePattern, unixTime));
 
         // delete dir
         System.out.println(hdfsUtils.deleteDir("/someDir"));
