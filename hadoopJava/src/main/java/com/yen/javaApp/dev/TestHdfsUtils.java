@@ -35,6 +35,9 @@ public class TestHdfsUtils {
 
         // write file
         hdfsUtils.writeFile("hadoop 123","/write_output.txt");
+        // test write multiple lines
+        String data1 = "hey this is 1st \nand this is 2nd \nthen 3rd :p";
+        hdfsUtils.writeFile(data1,"/write_output2.txt");
 
         // delete dir
         System.out.println(hdfsUtils.deleteDir("/someDir"));
