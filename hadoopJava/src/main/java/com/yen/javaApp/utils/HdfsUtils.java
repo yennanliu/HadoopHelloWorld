@@ -64,6 +64,22 @@ public class HdfsUtils {
         }
     }
 
+    public Boolean deleteDir(String dirPath) throws IOException {
+        Path _filePath = new Path(dirPath);
+        if (!this.fs.exists(_filePath)){
+            System.out.println("dir not exist");
+            return false;
+        }
+        try {
+            this.fs.delete(_filePath);
+            System.out.println("dir delete OK !");
+            return true;
+        } catch (Exception e){
+            System.out.println("dir delete failed " + e);
+            return false;
+        }
+    }
+
     public void listFile(String dirPath) throws IOException {
         // https://stackoverflow.com/questions/33807394/list-folder-and-files-of-hdfs-using-java/33807711
         FileStatus[] fileStatus = this.fs.listStatus(new Path(dirPath));

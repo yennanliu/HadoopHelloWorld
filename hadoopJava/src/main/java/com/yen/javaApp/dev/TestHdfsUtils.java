@@ -23,6 +23,7 @@ public class TestHdfsUtils {
 
         // mkdir
         Boolean makeDir_result =  hdfsUtils.makeDir("/TestHdfsUtils1");
+        Boolean makeDir_result2 =  hdfsUtils.makeDir("/TestHdfsUtils2");
         System.out.println("makeDir_result = " + makeDir_result);
 
         System.out.println("==================");
@@ -34,5 +35,9 @@ public class TestHdfsUtils {
 
         // write file
         hdfsUtils.writeFile("hadoop 123","/write_output.txt");
+
+        // delete dir
+        System.out.println(hdfsUtils.deleteDir("/someDir"));
+        System.out.println(hdfsUtils.deleteDir("/TestHdfsUtils2"));
     }
 }
