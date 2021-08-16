@@ -12,7 +12,7 @@
 * [spark-etl-pipeline](https://github.com/yennanliu/spark-etl-pipeline) - Demo of various Spark ETL processes
 * [utility_Scala](https://github.com/yennanliu/utility_Scala) - Scala/Spark programming basic demo 
 
-## Main Covers 
+## Main Scopes 
  
 - Hadoop stand-alone 
 - Hadoop hive
